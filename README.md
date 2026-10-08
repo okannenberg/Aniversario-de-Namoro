@@ -32,7 +32,7 @@ mvn spring-boot:run
 
 A API sobe em `http://localhost:8080`.
 
-Credenciais de protótipo: usuário `bruno.alice`, senha `alice2709`. Para produção, o próximo passo é trocar o login em memória por banco e hash de senha.
+Para login local, defina `SITE_USERNAME`, `SITE_PASSWORD` e `SITE_PREVIEW_KEY` no ambiente antes de iniciar.
 
 ## Mídias
 
