@@ -12,7 +12,10 @@ function getTimeLeft(): TimeLeft {
 }
 
 export function CountdownGate({ released }: { released: boolean }) {
-  const [time, setTime] = useState<TimeLeft>(getTimeLeft);
+  // Keep the first render deterministic on server and client. The countdown
+  // starts ticking after mount, avoiding a hydration mismatch caused by the
+  // clock advancing between the two renders.
+  const [time, setTime] = useState<TimeLeft>({ days: 0, hours: 0, minutes: 0, seconds: 0 });
   const [canEnter, setCanEnter] = useState(released);
 
   useEffect(() => {
